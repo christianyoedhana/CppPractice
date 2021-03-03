@@ -1,0 +1,1 @@
+MyPatterns contains codes that I want to reuse for my projects

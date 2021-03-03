@@ -1,0 +1,1 @@
+AmortizedRunTimer project contains patterns I am reusing for showing runtime performance of a function.
