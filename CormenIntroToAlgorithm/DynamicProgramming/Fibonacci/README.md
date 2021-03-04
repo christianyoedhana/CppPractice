@@ -1,3 +1,10 @@
+Key concepts:
+-Algorithm optimization as the first step in optimization
+-C++ constexpr
+-C++ function return type deduction using auto and decltype
+-C++ chrono
+-C++ template argument type deduction
+
 Fibonacci sequence algorithm is a very commonly-used introduction into recursion. The standard tail recursive solution is in StandardRecursive.cpp.
 The general solution to calculating a fibonacci number is : Fib(N) = Fib(N-1) + Fib(N-2); Fib(0) = 0; Fib(1) = 1;
 The main advantage of the general recursive solution is the option of pushing the calculation complexity from runtime to compile-time, if using a constexpr as
