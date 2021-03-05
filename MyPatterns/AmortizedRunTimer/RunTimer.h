@@ -4,6 +4,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <string>
+#include <sstream>
 /*
 *RunTimer is a class with a functor that takes 2 template parameter: ToEval, and ToEvalParam. ToEval type is the entity whose runtime is to be measured. 
 * NumLoop is the number of loop to evaluate.
@@ -56,9 +57,11 @@ namespace MyPatterns {
 		std::string latency() {
 			using std::cout;
 			using std::endl;
-			std::string out =  "Running " + m_funcName + " in " + std::to_string(m_loopCt) + " loops\n";
-			out += "Total time " + std::to_string(std::chrono::duration_cast<TimeUnit>(m_latency).count());	//@todo add units from Howard Hinnant's date.h
-			return out;
+			//Prefer stringstream to manual string formatting.
+			std::stringstream output;
+			output<< "Running "<<m_funcName<<" in "<<m_loopCt<<" loops"<<endl;
+			output<< "Total time "<<std::chrono::duration_cast<TimeUnit>(m_latency).count();
+			return output.str();
 		}
 	};
 }
